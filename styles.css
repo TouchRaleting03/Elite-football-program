@@ -26,17 +26,20 @@ body {
 
 header {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
   padding: 10px 20px;
   background-color: var(--primary-color-light);
   color: var(--white);
 }
 
 header .logo {
-  max-width: 50px;
+  max-width: 100px; /* Adjust the size of the logo */
   height: auto;
-  margin-right: 20px;
+}
+
+.centered-logo {
+  margin: 0 auto;
 }
 
 header h1 {
@@ -313,6 +316,40 @@ footer a:hover {
 }
 
 /* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .section__container {
+    padding: 4rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .content h2.section__header {
+    font-size: 22px;
+  }
+
+  .content p.section__subheader {
+    font-size: 16px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .team-member h3 {
+    font-size: 16px;
+  }
+
+  .team-member p {
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 1024px) {
   .team-member {
     flex: 1 1 calc(33.33% - 20px);
@@ -359,6 +396,46 @@ footer a:hover {
   .team-member {
     flex: 1 1 calc(50% - 20px);
   }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .section__header {
+    font-size: 2rem;
+  }
+
+  .section__subheader {
+    font-size: 16px;
+  }
+
+  .content h2.section__header {
+    font-size: 20px;
+  }
+
+  .content p.section__subheader {
+    font-size: 14px;
+  }
+
+  .content p {
+    font-size: 12px;
+  }
+
+  .team-member h3 {
+    font-size: 14px;
+  }
+
+  .team-member p {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -376,5 +453,45 @@ footer a:hover {
 
   .team-member {
     flex: 1 1 100%;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 12px;
+  }
+
+  .section__header {
+    font-size: 1.75rem;
+  }
+
+  .section__subheader {
+    font-size: 14px;
+  }
+
+  .content h2.section__header {
+    font-size: 18px;
+  }
+
+  .content p.section__subheader {
+    font-size: 12px;
+  }
+
+  .content p {
+    font-size: 10px;
+  }
+
+  .team-member h3 {
+    font-size: 12px;
+  }
+
+  .team-member p {
+    font-size: 8px;
   }
 }
