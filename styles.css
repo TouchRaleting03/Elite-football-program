@@ -137,7 +137,7 @@ main {
 }
 
 .content h2.section__header {
-  font-size: 24px;
+  font-size: 2rem; /* Match the font size of the Year Calendar section header */
   color: #333;
   margin-bottom: 10px;
 }
@@ -261,7 +261,7 @@ main {
 
 .team-member p {
   font-size: 14px;
-  color: var(--text-light);
+  color: var (--text-light);
 }
 
 table {
