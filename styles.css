@@ -75,7 +75,6 @@ nav a.active {
 }
 
 .hero {
-
   color: var(--white);
   text-align: center;
   padding: 100px 20px;
@@ -88,7 +87,7 @@ nav a.active {
 
 .hero p {
   font-size: 18px;
-  color: var(--text-light);
+  color: var (--text-light);
 }
 
 .sponsor {
@@ -207,7 +206,8 @@ main {
   overflow: hidden;
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video {
   width: 100%;
   height: 200px; /* Set a fixed height */
   object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
@@ -247,21 +247,59 @@ main {
 
 .team-member img {
   width: 100%;
-  height: 200px;
+  height: 200px; /* Set a fixed height */
   object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  border-radius: 10px; /* Adjust this value or remove it to change the shape */
+  margin-bottom: 20px;
+}
+
+/* Adjust individual image positions */
+.adjust-position-1 {
+  object-position: center; 
+}
+
+.adjust-position-2 {
+  object-position: top; 
+}
+
+.adjust-position-3 {
+  object-position: top; 
+}
+
+.adjust-position-4 {
+  object-position: center; 
+}
+
+.adjust-position-5 {
+  object-position: center; 
+}
+
+.adjust-position-6 {
+  object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
+  object-position: top; /* Adjust position to focus on the top part of the image */
+}
+
+.adjust-position-7 {
+  object-position: center;
+}
+
+.adjust-position {
+  object-position: top; /* Adjust position to focus on the top part of the image */
+}
+
+.adjust-position-top {
+  object-position: center; /* Adjust position to focus on the top part of the image */
 }
 
 .team-member h3 {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--white);
   margin-bottom: 5px;
 }
 
 .team-member p {
   font-size: 14px;
-  color: var (--text-light);
+  color: var(--text-light);
 }
 
 table {
@@ -347,6 +385,10 @@ footer a:hover {
 
   .team-member p {
     font-size: 12px;
+  }
+
+  .team-member {
+    flex: 1 1 calc(25% - 20px);
   }
 }
 
@@ -453,6 +495,12 @@ footer a:hover {
 
   .team-member {
     flex: 1 1 100%;
+  }
+
+  .team-member img {
+    height: auto; /* Allow the height to adjust based on the image aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible within the container */
+    object-position: center; /* Center the image within the container */
   }
 
   .hero {
