@@ -9,26 +9,30 @@
 <body>
     <header>
         <img src="images/051 logo.jpeg" alt="Team Logo" class="logo centered-logo">
+        <h1>Meet the Team</h1>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-menu" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="Meet the team.html" class="active">Meet the Team</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukhhPTnp4K_vMfRr6O9BXO5trsx8xSCFnx321yfYnGJNKLA/viewform?usp=header" target="_blank">Registration</a>
+        </nav>
     </header>
-    
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Meet the team.html" class="active">Meet the Team</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukhhPTnp4K_vMfRr6O9BXO5trsx8xSCFnx321yfYnGJNKLA/viewform?usp=header" target="_blank">Registration</a>
-    </nav>
 
     <main>
         <!-- Technical Team Section -->
         <section id="technical-team">
             <h2>Technical Team</h2>
-            <div class="team-grid">
-                <!--
+            <!--<div class="team-grid">
                 <div class="team-member">
                     <img src="images/technical1.jpg" alt="Technical Member 1" class="adjust-position-1">
                     <h3>Setjhaba Lekhafola</h3>
                     <p>Head Coach & Program Director</p>
-                </div>-->
+                </div> -->
 
                 <div class="team-member">
                     <img src="images/Picture 7.jpeg" alt="Technical Member 2" class="adjust-position-2">
@@ -47,29 +51,41 @@
                     <h3>Mafasa</h3>
                     <p>Goalkeeper Coach</p>
                 </div>
+                
                 <div class="team-member">
                     <img src="images/picture 3.jpeg" alt="Technical Member 5" class="adjust-position-5">
                     <h3>Tinashe Makonse</h3>
                     <p>Social Media & Equipment Manager</p>
                 </div>
+                
                 <div class="team-member">
                     <img src="images/picture 2.jpeg" alt="Technical Member 6" class="adjust-position-6">
                     <h3>Candice Motaung</h3>
                     <p>Administrator and Team Manager</p>
                 </div>
-               <!--
+                <!-- Commented out section for future use
                 <div class="team-member">
                     <img src="images/picture 8.jpeg" alt="Technical Member 7" class="adjust-position-7">
                     <h3>New Member</h3>
-                    <p>New Role</p>/--> 
+                    <p>New Role</p>
                 </div>
+                -->
             </div>
         </section>
     </main>
     
     <footer>
-        <p>&copy; 2025 Elite football program. All rights reserved.</p>
+        <p>&copy; 2025 Elite Football Program. All rights reserved.</p>
         <a href="privacy.html">Privacy Policy</a>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

@@ -8,14 +8,17 @@
 </head>
 <body>
     <header>
-        <header>
-            <img src="images/051 logo.jpeg" alt="Team Logo" class="logo centered-logo">
-        </header>
+        <img src="images/051 logo.jpeg" alt="Team Logo" class="logo centered-logo">
         <h1>Gallery</h1>
-        <nav>
+        <div class="nav-toggle" id="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-menu" id="nav-menu">
             <a href="index.html">Home</a>
             <a href="Meet the team.html">Meet the Team</a>
-            <a href="gallery.html">Gallery</a>
+            <a href="gallery.html" class="active">Gallery</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukhhPTnp4K_vMfRr6O9BXO5trsx8xSCFnx321yfYnGJNKLA/viewform?usp=header" target="_blank">Registration</a>
         </nav>
     </header>
@@ -72,25 +75,7 @@
                 </div>
                 <div class="gallery-item">
                     <img src="images/game pics/IMG_9182.JPG" alt="Training 8">
-                </div> 
-                <!--
-                <div class="gallery-item">
-                    <video controls>
-                        <source src="videos/IMG_9209.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
                 </div>
-                <div class="gallery-item">
-                    <video controls>
-                        <source src="videos/IMG_9275.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="gallery-item">
-                    <video controls>
-                        <source src="videos/IMG_9181.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>-->
                 </div>
             </div>
         </section>
@@ -98,5 +83,13 @@
     <footer>
         <p>&copy; 2025 Elite Football Program. All rights reserved.</p>
     </footer>
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

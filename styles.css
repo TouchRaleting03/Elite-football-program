@@ -26,7 +26,7 @@ body {
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: var(--primary-color-light);
@@ -38,7 +38,7 @@ header .logo {
   height: auto;
 }
 
-.centered-logo {
+centered-logo {
   margin: 0 auto;
 }
 
@@ -74,6 +74,53 @@ nav a.active {
   color: rgb(247, 246, 246);
 }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  background: var(--white);
+  border-radius: 2px;
+  height: 3px;
+  margin: 2px 0;
+  width: 25px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .hero {
   color: var(--white);
   text-align: center;
@@ -87,7 +134,7 @@ nav a.active {
 
 .hero p {
   font-size: 18px;
-  color: var (--text-light);
+  color: var(--text-light);
 }
 
 .sponsor {
@@ -206,8 +253,7 @@ main {
   overflow: hidden;
 }
 
-.gallery-item img,
-.gallery-item video {
+.gallery-item img {
   width: 100%;
   height: 200px; /* Set a fixed height */
   object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
@@ -231,24 +277,24 @@ main {
 
 .team-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Ensure the images are in a horizontal line */
   gap: 20px;
-  justify-content: space-between;
+  overflow-x: auto; /* Enable horizontal scrolling if necessary */
 }
 
 .team-member {
-  flex: 1 1 calc(20% - 20px);
+  flex: 0 0 auto; /* Prevent the items from shrinking */
   text-align: center;
   background-color: var(--primary-color-extra-light);
-  padding: 10px;
+  padding: 20px; /* Add padding to create a backdrop around the image */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .team-member img {
   width: 100%;
-  height: 200px; /* Set a fixed height */
-  object-fit: cover;
+  max-height: 300px; /* Set a maximum height */
+  object-fit: contain; /* Ensure the entire image is visible within the container */
   border-radius: 10px; /* Adjust this value or remove it to change the shape */
   margin-bottom: 20px;
 }
@@ -259,11 +305,11 @@ main {
 }
 
 .adjust-position-2 {
-  object-position: top; 
+  object-position: center; 
 }
 
 .adjust-position-3 {
-  object-position: top; 
+  object-position: center; 
 }
 
 .adjust-position-4 {
@@ -275,7 +321,7 @@ main {
 }
 
 .adjust-position-6 {
-  object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
+  object-fit: contain; /* Ensure the entire image is visible within the container */
   object-position: top; /* Adjust position to focus on the top part of the image */
 }
 
