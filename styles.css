@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+/* Root Variables */
 :root {
   --primary-color: rgba(17, 19, 23, 0.8); /* Semi-transparent primary color */
   --primary-color-light: rgba(31, 33, 37, 0.8); /* Semi-transparent light primary color */
@@ -11,19 +12,20 @@
   --max-width: 1200px;
 }
 
+/* Global Styles */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-/* General Styles */
 body {
   font-family: "Poppins", sans-serif;
   background: url('images/picture 5.jpeg') no-repeat center center/cover; /* Add background image */
   color: var(--text-light);
 }
 
+/* Header Styles */
 header {
   display: flex;
   justify-content: space-between;
@@ -46,6 +48,7 @@ header h1 {
   margin: 0;
 }
 
+/* Navigation Styles */
 nav {
   max-width: var(--max-width);
   margin: auto;
@@ -94,6 +97,7 @@ nav a.active {
   justify-content: space-between;
 }
 
+/* Responsive Navigation */
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
@@ -121,6 +125,7 @@ nav a.active {
   }
 }
 
+/* Hero Section */
 .hero {
   color: var(--white);
   text-align: center;
@@ -134,9 +139,10 @@ nav a.active {
 
 .hero p {
   font-size: 18px;
-  color: var(--text-light);
+  color: var (--text-light);
 }
 
+/* Sponsor Section */
 .sponsor {
   margin-top: 20px;
   text-align: center;
@@ -148,6 +154,7 @@ nav a.active {
   margin-top: 10px;
 }
 
+/* Main Content */
 main {
   margin-top: 20px;
 }
@@ -173,7 +180,7 @@ main {
   color: var(--text-light);
 }
 
-/* Style for the Latest News section */
+/* Latest News Section */
 .content {
   background-color: rgba(249, 249, 249, 0.5); /* More transparent background */
   padding: 20px;
@@ -201,7 +208,7 @@ main {
   margin-bottom: 10px;
 }
 
-/* Style for the Year Calendar section */
+/* Year Calendar Section */
 #year-calendar {
   background-color: var(--primary-color-light);
   padding: 20px;
@@ -232,6 +239,7 @@ main {
   margin-bottom: 5px;
 }
 
+/* Gallery Section */
 .gallery {
   padding: 20px;
   background-color: var(--primary-color-light); /* Semi-transparent background */
@@ -267,6 +275,7 @@ main {
   margin: 0;
 }
 
+/* Team Section */
 .team {
   padding: 20px;
   background-color: var(--primary-color-light);
@@ -275,11 +284,11 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Default styles for mobile screens */
 .team-grid {
   display: flex;
-  flex-wrap: nowrap; /* Ensure the images are in a horizontal line */
-  gap: 20px;
-  overflow-x: auto; /* Enable horizontal scrolling if necessary */
+  flex-direction: column;
+  align-items: center;
 }
 
 .team-member {
@@ -300,41 +309,20 @@ main {
 }
 
 /* Adjust individual image positions */
-.adjust-position-1 {
-  object-position: center; 
-}
-
-.adjust-position-2 {
-  object-position: center; 
-}
-
-.adjust-position-3 {
-  object-position: center; 
-}
-
-.adjust-position-4 {
-  object-position: center; 
-}
-
-.adjust-position-5 {
-  object-position: center; 
-}
-
-.adjust-position-6 {
-  object-fit: contain; /* Ensure the entire image is visible within the container */
-  object-position: top; /* Adjust position to focus on the top part of the image */
-}
-
+.adjust-position-1,
+.adjust-position-2,
+.adjust-position-3,
+.adjust-position-4,
+.adjust-position-5,
 .adjust-position-7 {
   object-position: center;
 }
 
-.adjust-position {
-  object-position: top; /* Adjust position to focus on the top part of the image */
-}
-
+.adjust-position-6,
+.adjust-position,
 .adjust-position-top {
-  object-position: center; /* Adjust position to focus on the top part of the image */
+  object-fit: contain; /* Ensure the entire image is visible within the container */
+  object-position: top; /* Adjust position to focus on the top part of the image */
 }
 
 .team-member h3 {
@@ -348,6 +336,20 @@ main {
   color: var(--text-light);
 }
 
+/* Styles for desktop screens */
+@media (min-width: 768px) {
+  .team-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .team-member {
+    margin: 10px;
+  }
+}
+
+/* Table Styles */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -367,6 +369,7 @@ tr:nth-child(even) {
   background-color: var(--primary-color-extra-light); /* Semi-transparent background */
 }
 
+/* Button Styles */
 button {
   background-color: var(--secondary-color); /* Semi-transparent background */
   color: var(--white);
@@ -382,6 +385,7 @@ button:hover {
   background-color: var(--secondary-color-dark); /* Semi-transparent background */
 }
 
+/* Footer Styles */
 footer {
   background-color: var(--primary-color-light); /* Semi-transparent background */
   color: var(--white);
