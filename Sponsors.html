@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sponsors | Elite Football Program</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="images/051 logo.jpeg" alt="Team Logo" class="logo centered-logo">
+    <h1>Elite Football Program</h1>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-menu" id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="Meet the team.html">Meet the Team</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukhhPTnp4K_vMfRr6O9BXO5trsx8xSCFnx321yfYnGJNKLA/viewform?usp=header" target="_blank">Registration</a>
+      <a href="Sponsors.html">Sponsors</a>
+    </nav>
+  </header>
+  <main>
+    <section class="sponsor" style="margin-top: 60px;">
+      <div style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+        <img src="images/Bene-Tech logo-1.jpg" alt="Sponsor 1 Logo" class="sponsor-logo" style="max-width:150px;">
+        <img src="images/cozy corner logo.jpg" alt="Sponsor 2 Logo" class="sponsor-logo" style="max-width:150px;">
+      </div>
+      <p style="margin-top: 30px; font-size: 1.2em; color: #ffffff;">
+        We would like to thank our main 2 sponsors for their continued and generous support
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Elite Football Program. All rights reserved.</p>
+  </footer>
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
