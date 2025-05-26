@@ -6,7 +6,9 @@
     <title>Gallery - Elite Football Program</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome CDN for social icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- SimpleLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.2/dist/simple-lightbox.min.css">
 </head>
 <body>
     <header>
@@ -28,58 +30,27 @@
     <main>
         <section id="match-day">
             <h2>Match Day</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0799.JPG" alt="Match Day 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0824.JPG" alt="Match Day 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0839.JPG" alt="Match Day 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0853.JPG" alt="Match Day 4">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0872.JPG" alt="Match Day 5">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0878.JPG" alt="Match Day 6">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0897.JPG" alt="Match Day 7">
-                </div>
+            <div class="gallery-grid" id="matchday-gallery">
+                <a href="images/game pics/IMG_0799.JPG" class="gallery-item"><img src="images/game pics/IMG_0799.JPG" alt="Match Day 1"></a>
+                <a href="images/game pics/IMG_0824.JPG" class="gallery-item"><img src="images/game pics/IMG_0824.JPG" alt="Match Day 2"></a>
+                <a href="images/game pics/IMG_0839.JPG" class="gallery-item"><img src="images/game pics/IMG_0839.JPG" alt="Match Day 3"></a>
+                <a href="images/game pics/IMG_0853.JPG" class="gallery-item"><img src="images/game pics/IMG_0853.JPG" alt="Match Day 4"></a>
+                <a href="images/game pics/IMG_0872.JPG" class="gallery-item"><img src="images/game pics/IMG_0872.JPG" alt="Match Day 5"></a>
+                <a href="images/game pics/IMG_0878.JPG" class="gallery-item"><img src="images/game pics/IMG_0878.JPG" alt="Match Day 6"></a>
+                <a href="images/game pics/IMG_0897.JPG" class="gallery-item"><img src="images/game pics/IMG_0897.JPG" alt="Match Day 7"></a>
             </div>
         </section>
         <section id="training">
             <h2>Training</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0518.JPG" alt="Training 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0415.JPG" alt="Training 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0446.JPG" alt="Training 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0426.JPG" alt="Training 4">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0448.JPG" alt="Training 5">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0454.JPG" alt="Training 6">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_0493.JPG" alt="Training 7">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/game pics/IMG_9182.JPG" alt="Training 8">
-                </div>
-                </div>
+            <div class="gallery-grid" id="training-gallery">
+                <a href="images/game pics/IMG_0518.JPG" class="gallery-item"><img src="images/game pics/IMG_0518.JPG" alt="Training 1"></a>
+                <a href="images/game pics/IMG_0415.JPG" class="gallery-item"><img src="images/game pics/IMG_0415.JPG" alt="Training 2"></a>
+                <a href="images/game pics/IMG_0446.JPG" class="gallery-item"><img src="images/game pics/IMG_0446.JPG" alt="Training 3"></a>
+                <a href="images/game pics/IMG_0426.JPG" class="gallery-item"><img src="images/game pics/IMG_0426.JPG" alt="Training 4"></a>
+                <a href="images/game pics/IMG_0448.JPG" class="gallery-item"><img src="images/game pics/IMG_0448.JPG" alt="Training 5"></a>
+                <a href="images/game pics/IMG_0454.JPG" class="gallery-item"><img src="images/game pics/IMG_0454.JPG" alt="Training 6"></a>
+                <a href="images/game pics/IMG_0493.JPG" class="gallery-item"><img src="images/game pics/IMG_0493.JPG" alt="Training 7"></a>
+                <a href="images/game pics/IMG_9182.JPG" class="gallery-item"><img src="images/game pics/IMG_9182.JPG" alt="Training 8"></a>
             </div>
         </section>
     </main>
@@ -104,13 +75,18 @@
     <footer>
         <p>&copy; 2025 Elite Football Program. All rights reserved.</p>
     </footer>
+    <!-- SimpleLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simplelightbox@2.14.2/dist/simple-lightbox.min.js"></script>
     <script>
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
-
         navToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
+
+        // Initialize SimpleLightbox for both galleries
+        new SimpleLightbox('#matchday-gallery a');
+        new SimpleLightbox('#training-gallery a');
     </script>
 </body>
 </html>

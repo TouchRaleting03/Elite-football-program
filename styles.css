@@ -139,7 +139,7 @@ nav a.active {
 
 .hero p {
   font-size: 18px;
-  color: var (--text-light);
+  color: var(--text-light);
 }
 
 /* Sponsor Section */
@@ -425,7 +425,7 @@ list-style: none;
 
 .card-list .card-link .card-image {
   width: 100%;
- aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 10px;
 }
