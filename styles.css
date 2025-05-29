@@ -275,6 +275,26 @@ main {
   margin: 0;
 }
 
+/* Gallery folder (tab) button styles */
+.gallery-folder-btn {
+  background: #1c2c5b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  margin: 0 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.gallery-folder-btn.active,
+.gallery-folder-btn:focus,
+.gallery-folder-btn:hover {
+  background: var(--secondary-color-dark);
+  color: #fff;
+}
+
 /* Team Section */
 .team {
   padding: 20px;
