@@ -3,10 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elite Football Program</title>
+  <title>Tournaments - Elite Football Program</title>
   <link rel="stylesheet" href="styles.css">
   <!-- Font Awesome CDN for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .tabs { display: flex; border-bottom: 2px solid #eee; margin-bottom: 20px; }
+    .tab-btn {
+      padding: 10px 20px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-size: 1.1em;
+      transition: border 0.2s;
+    }
+    .tab-btn.active { border-bottom: 2px solid #1877f3; font-weight: bold; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .gallery img { max-width: 200px; margin: 10px; border-radius: 8px; }
+  </style>
 </head>
 <body>
   <header>
@@ -23,56 +39,26 @@
       <a href="gallery.html">Gallery</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukhhPTnp4K_vMfRr6O9BXO5trsx8xSCFnx321yfYnGJNKLA/viewform?usp=header" target="_blank">Registration</a>
       <a href="Sponsors.html">Sponsors</a>
-      <a href="Tournaments.html">Bill Stewart tournament</a>
+      <a href="Tournaments.html" class="active">Bill Stewart tournament</a>
     </nav>
   </header>
   <main>
-    <div class="hero">
-      <h1> Welcome to Elite football program</h1>
-      <p>This is an elite program which specializes in working with a small number of boys per age group. The program focuses on 3 components to  develop a player and a man for the future. Fitness, nutrition, and football skill. The program's main focus is long term athlete development. We have 3 major events in a year. 1 National tournament, 1x International tournament and an academy tour.</p>
+    <h2>Tournaments</h2>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="bill-stewart">Bill Stewart Tournament</button>
+      <!-- Add more tournament tabs here if needed -->
     </div>
-
-    <div class="content">
-      <h2 class="section__header">Latest News</h2>
-      <p>We are proud to announce that <strong>Thato Mareka</strong> and <strong>Oratile Kruger</strong> have been selected to represent the Bloemfontein U15 LFA team in the curtain-raiser games, which will be held in Bloemfontein as part of the upcoming COSAFA Cup</p>
-      <p style="margin: 20px 0 0 0; color: #444; font-size: 1.1em;">
-        Our boys will be traveling to Pietermaritzburg for the annual inter-provincial youth tournament called Bill Stewart.<br>
-        <strong>From 1 - 6 July 2025</strong>
-      </p>
-      <h2>Winners of the U13 Easter Tournament 2025</h2>
-      <img src="images/Winners_of_the_U13_Easter_Tournament_2025.png" alt="Easter Tournament Champions 2025" style="max-width:100%;border-radius:8px;margin-top:15px;">
+    <div id="bill-stewart" class="tab-content active">
+      <h3>Bill Stewart Tournament - Photo Gallery</h3>
+      <div class="gallery">
+        <!-- Example images, replace src with actual tournament photos -->
+        <img src="images/bill_stewart_1.jpg" alt="Bill Stewart Tournament Photo 1">
+        <img src="images/bill_stewart_2.jpg" alt="Bill Stewart Tournament Photo 2">
+        <img src="images/bill_stewart_3.jpg" alt="Bill Stewart Tournament Photo 3">
+        <!-- Add more images as needed -->
+      </div>
     </div>
-
-    <!-- Year Calendar Section -->
-    <section id="year-calendar">
-      <h2>Year Calendar 2025</h2>
-      <div class="event">
-        <h3>Easter Tournament</h3>
-        <p>Date: 26 - 28 April</p>
-        <p>Venue: Clive Solomon Stadium</p>
-        <p>Kick Off: 08:00</p>
-        <p>Fixtures: TBC</p>
-      </div>
-
-      <div class="event">
-        <h3>Bill Stewart Tournament 2025</h3>
-        <p>Date: 01 July - 06 July</p>
-        <p>Venue: KZN, Durban - Hilton College</p>
-        <p>2 weeks until the tournament</p>
-      </div>
-      <div class="event">
-        <h3>Cape Town Tour</h3>
-        <p>Date: 06 - 10 October</p>
-        <p>Venue: Cape Town</p>
-        <p>More details will be communicated</p>
-      </div>
-      <div class="event">
-        <h3>IberCup 2025</h3>
-        <p>Date: 11 - 15 December</p>
-        <p>Venue: Jo'burg</p>
-        <p>More details will be communicated</p>
-      </div>
-    </section>
+    <!-- Add more tab-content sections for other tournaments if needed -->
     <!-- Social Media Links -->
     <div style="text-align:center; margin: 40px 0 20px 0; font-size: 2rem;">
       <a href="https://www.facebook.com/share/16JBcn1P8c/?mibextid=wwXIfr" target="_blank" style="margin:0 10px; color:#1877f3; text-decoration:none;" aria-label="Facebook">
@@ -96,11 +82,21 @@
     <p>&copy; 2025 Elite Football Program. All rights reserved.</p>
   </footer>
   <script>
+    // Responsive nav toggle
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-
     navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
+    });
+
+    // Tab switching logic
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById(this.dataset.tab).classList.add('active');
+      });
     });
   </script>
 </body>
