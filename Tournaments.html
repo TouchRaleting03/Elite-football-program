@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tournaments - Elite Football Program</title>
+  <title>Tournament Galleries - Elite Football Program</title>
   <link rel="stylesheet" href="styles.css">
   <!-- Font Awesome CDN for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -21,7 +21,27 @@
     .tab-btn.active { border-bottom: 2px solid #1877f3; font-weight: bold; }
     .tab-content { display: none; }
     .tab-content.active { display: block; }
-    .gallery img { max-width: 200px; margin: 10px; border-radius: 8px; }
+    .sub-tabs { display: flex; margin: 20px 0 10px 0; }
+    .sub-tab-btn {
+      padding: 8px 16px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-size: 1em;
+      margin-right: 10px;
+      transition: border 0.2s;
+    }
+    .sub-tab-btn.active { border-bottom: 2px solid #E4405F; font-weight: bold; }
+    .sub-tab-content { display: none; }
+    .sub-tab-content.active { display: block; }
+    .gallery img, .gallery video {
+      max-width: 200px;
+      margin: 10px;
+      border-radius: 8px;
+      display: inline-block;
+      vertical-align: top;
+    }
   </style>
 </head>
 <body>
@@ -39,26 +59,62 @@
       <a href="gallery.html">Gallery</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukhhPTnp4K_vMfRr6O9BXO5trsx8xSCFnx321yfYnGJNKLA/viewform?usp=header" target="_blank">Registration</a>
       <a href="Sponsors.html">Sponsors</a>
-      <a href="Tournaments.html" class="active">Bill Stewart tournament</a>
+      <a href="Tournaments.html" class="active">Tournaments</a>
     </nav>
   </header>
   <main>
-    <h2>Tournaments</h2>
+    <h2>Tournament Galleries</h2>
     <div class="tabs">
       <button class="tab-btn active" data-tab="bill-stewart">Bill Stewart Tournament</button>
-      <!-- Add more tournament tabs here if needed -->
+      <button class="tab-btn" data-tab="iber-cup">Iber Cup Tournament</button>
     </div>
+    <!-- Bill Stewart Tournament Tab -->
     <div id="bill-stewart" class="tab-content active">
-      <h3>Bill Stewart Tournament - Photo Gallery</h3>
-      <div class="gallery">
-        <!-- Example images, replace src with actual tournament photos -->
-        <img src="images/bill_stewart_1.jpg" alt="Bill Stewart Tournament Photo 1">
-        <img src="images/bill_stewart_2.jpg" alt="Bill Stewart Tournament Photo 2">
-        <img src="images/bill_stewart_3.jpg" alt="Bill Stewart Tournament Photo 3">
-        <!-- Add more images as needed -->
+      <div style="margin-bottom:18px; padding:10px 0;">
+        <h3 style="margin-bottom:6px;">Bill Stewart U13 Inter-provincial Tournament</h3>
+        <div><strong>Location:</strong> Hilton College</div>
+        <div><strong>Date:</strong> 1-6 July 2025</div>
+      </div>
+      <div class="sub-tabs">
+        <button class="sub-tab-btn active" data-subtab="bs-photos">Photos</button>
+        <button class="sub-tab-btn" data-subtab="bs-videos">Videos</button>
+      </div>
+      <div id="bs-photos" class="sub-tab-content active">
+        <div class="gallery">
+          <!-- Replace with actual Bill Stewart photos -->
+          <img src="images/bill_stewart_1.jpg" alt="Bill Stewart Photo 1">
+          <img src="images/bill_stewart_2.jpg" alt="Bill Stewart Photo 2">
+          <img src="images/bill_stewart_3.jpg" alt="Bill Stewart Photo 3">
+        </div>
+      </div>
+      <div id="bs-videos" class="sub-tab-content">
+        <div class="gallery">
+          <!-- Replace with actual Bill Stewart videos -->
+          <video controls src="videos/bill_stewart_1.mp4"></video>
+          <video controls src="videos/bill_stewart_2.mp4"></video>
+        </div>
       </div>
     </div>
-    <!-- Add more tab-content sections for other tournaments if needed -->
+    <!-- Iber Cup Tournament Tab -->
+    <div id="iber-cup" class="tab-content">
+      <div class="sub-tabs">
+        <button class="sub-tab-btn active" data-subtab="ic-photos">Photos</button>
+        <button class="sub-tab-btn" data-subtab="ic-videos">Videos</button>
+      </div>
+      <div id="ic-photos" class="sub-tab-content active">
+        <div class="gallery">
+          <!-- Replace with actual Iber Cup photos -->
+          <img src="images/iber_cup_1.jpg" alt="Iber Cup Photo 1">
+          <img src="images/iber_cup_2.jpg" alt="Iber Cup Photo 2">
+        </div>
+      </div>
+      <div id="ic-videos" class="sub-tab-content">
+        <div class="gallery">
+          <!-- Replace with actual Iber Cup videos -->
+          <video controls src="videos/iber_cup_1.mp4"></video>
+        </div>
+      </div>
+    </div>
     <!-- Social Media Links -->
     <div style="text-align:center; margin: 40px 0 20px 0; font-size: 2rem;">
       <a href="https://www.facebook.com/share/16JBcn1P8c/?mibextid=wwXIfr" target="_blank" style="margin:0 10px; color:#1877f3; text-decoration:none;" aria-label="Facebook">
@@ -89,13 +145,35 @@
       navMenu.classList.toggle('active');
     });
 
-    // Tab switching logic
+    // Main tab switching
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', function() {
+        // Hide all tournament tab contents
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+        // Activate the selected tournament tab
         this.classList.add('active');
         document.getElementById(this.dataset.tab).classList.add('active');
+        // Reset sub-tabs to Photos for the selected tournament
+        document.querySelectorAll(`#${this.dataset.tab} .sub-tab-btn`).forEach((st, i) => {
+          st.classList.toggle('active', i === 0);
+        });
+        document.querySelectorAll(`#${this.dataset.tab} .sub-tab-content`).forEach((sc, i) => {
+          sc.classList.toggle('active', i === 0);
+        });
+      });
+    });
+
+    // Sub-tab switching (only within the active tournament tab)
+    document.querySelectorAll('.sub-tabs').forEach(subTabs => {
+      subTabs.addEventListener('click', function(e) {
+        if (e.target.classList.contains('sub-tab-btn')) {
+          const parent = e.target.closest('.tab-content');
+          parent.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
+          parent.querySelectorAll('.sub-tab-content').forEach(tc => tc.classList.remove('active'));
+          e.target.classList.add('active');
+          parent.querySelector(`#${e.target.dataset.subtab}`).classList.add('active');
+        }
       });
     });
   </script>
