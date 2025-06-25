@@ -61,7 +61,7 @@
       <div class="event">
         <h3>Bill Stewart Tournament 2025</h3>
         <p>Date: 01 July - 06 July</p>
-        <p>Venue: KZN, Durban - Hilton College</p>
+        <p>Venue: KZN, Pietermaritzburg - Hilton College</p>
         <p id="bill-stewart-countdown"></p>
       </div>
       <div class="event">
@@ -75,6 +75,7 @@
         <p>Date: 11 - 15 December</p>
         <p>Venue: Jo'burg</p>
         <p>More details will be communicated</p>
+        <p id="ibercup-countdown"></p>
       </div>
     </section>
     <!-- Social Media Links -->
@@ -116,19 +117,38 @@
 
       if (diff <= 0) {
         countdownElem.textContent = "Under way";
-        return;
+      } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        countdownElem.textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds until the tournament`;
+        setTimeout(updateCountdown, 1000);
       }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownElem.textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds until the tournament`;
-
-      setTimeout(updateCountdown, 1000);
     }
     updateCountdown();
+
+    // Countdown for IberCup Tournament
+    function updateIberCupCountdown() {
+      const countdownElem = document.getElementById('ibercup-countdown');
+      const targetDate = new Date('2025-12-11T00:00:00');
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        countdownElem.textContent = "Under way";
+      } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        countdownElem.textContent = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds until the tournament`;
+        setTimeout(updateIberCupCountdown, 1000);
+      }
+    }
+    updateIberCupCountdown();
   </script>
 </body>
 </html>
