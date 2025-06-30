@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Building - Elite Football Program</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .gallery img {
+      max-width: 220px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      background: #eee3e3;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .gallery img:hover {
+      transform: scale(1.04);
+    }
+    .news-section {
+      max-width: 700px;
+      margin: 30px auto 0 auto;
+      padding: 0 16px;
+      color: #f3e2e2;
+    }
+    /* Lightbox styles */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox-overlay.active {
+      display: flex;
+    }
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      background: #fff;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 32px;
+      right: 48px;
+      font-size: 2.5rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1001;
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- ...existing code for logo and nav... -->
+    <img src="images/051 logo.jpeg" alt="Team Logo" class="logo centered-logo">
+    <h1>Elite Football Program</h1>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-menu" id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="Meet the team.html">Meet the Team</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="Tournaments.html">Tournaments</a>
+      <a href="Sponsors.html">Sponsors</a>
+      <a href="Team Building.html" class="active">Team Building</a>
+    </nav>
+  </header>
+  <main>
+    <section class="news-section">
+      <h2>Team Building News</h2>
+      <p>
+        Our team building events are designed to strengthen the bond between players, improve communication, and foster a positive team spirit. These activities help our boys develop leadership, trust, and collaboration skills both on and off the field.
+      </p>
+      <p>
+        The latest team building session included outdoor challenges, group problem-solving games, and motivational talks. The boys enjoyed a day full of fun, learning, and camaraderie!
+      </p>
+    </section>
+    <section>
+      <h2 style="text-align:center; margin-top:40px;">Team Building Gallery</h2>
+      <div class="gallery">
+        <img src="images/Team_Building/team_building_1.jpg" alt="Team Building Photo 1">
+        <img src="images/team_building/team_building_2.jpg" alt="Team Building Photo 2">
+        <img src="images/team_building/team_building_3.jpg" alt="Team Building Photo 3">
+        <img src="images/team_building/team_building_4.jpg" alt="Team Building Photo 4">
+        <img src="images/team_building/team_building_5.jpg" alt="Team Building Photo 5">
+        <img src="images/team_building/team_building_6.jpg" alt="Team Building Photo 6">
+        <img src="images/team_building/team_building_7.jpg" alt="Team Building Photo 7">
+        <img src="images/team_building/team_building_8.jpg" alt="Team Building Photo 8">
+        <img src="images/team_building/team_building_9.jpg" alt="Team Building Photo 9">
+      </div>
+      <!-- Lightbox overlay -->
+      <div class="lightbox-overlay" id="lightbox-overlay">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="Preview" class="lightbox-img" id="lightbox-img">
+        <button id="lightbox-prev" aria-label="Previous" style="position:absolute;left:30px;top:50%;transform:translateY(-50%);font-size:2.5rem;color:#fff;background:none;border:none;cursor:pointer;z-index:1001;">&#8592;</button>
+        <button id="lightbox-next" aria-label="Next" style="position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:2.5rem;color:#fff;background:none;border:none;cursor:pointer;z-index:1001;">&#8594;</button>
+      </div>
+    </section>
+    <!-- Social Media Links -->
+    <div style="text-align:center; margin: 40px 0 20px 0; font-size: 2rem;">
+      <a href="https://www.facebook.com/share/16JBcn1P8c/?mibextid=wwXIfr" target="_blank" style="margin:0 10px; color:#1877f3; text-decoration:none;" aria-label="Facebook">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/051boyz.eliteprogram?igsh=b3p0cmRyanl4aXdt" target="_blank" style="margin:0 10px; color:#E4405F; text-decoration:none;" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/@051boyz.eliteprogram?si=rGgqvPoFt3U-NdP4" target="_blank" style="margin:0 10px; color:#FF0000; text-decoration:none;" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      <a href="https://www.tiktok.com/@051boyz.eliteprogram?_t=ZM-8wg3YY4ONyK&_r=1" target="_blank" style="margin:0 10px; color:#000; text-decoration:none;" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+      <a href="https://wa.me/27760201924" target="_blank" style="margin:0 10px; color:#25D366; text-decoration:none;" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Elite Football Program. All rights reserved.</p>
+  </footer>
+  <script>
+    // Responsive nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Lightbox functionality with navigation
+    const galleryImages = Array.from(document.querySelectorAll('.gallery img'));
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    let currentIndex = 0;
+
+    function showLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = galleryImages[index].src;
+      lightboxImg.alt = galleryImages[index].alt;
+      lightboxOverlay.classList.add('active');
+    }
+
+    galleryImages.forEach((img, idx) => {
+      img.addEventListener('click', () => {
+        showLightbox(idx);
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => {
+      lightboxOverlay.classList.remove('active');
+      lightboxImg.src = '';
+    });
+
+    lightboxPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      showLightbox(currentIndex);
+    });
+
+    lightboxNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      showLightbox(currentIndex);
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightboxOverlay.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        lightboxOverlay.classList.remove('active');
+        lightboxImg.src = '';
+      } else if (e.key === 'ArrowLeft') {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        showLightbox(currentIndex);
+      } else if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        showLightbox(currentIndex);
+      }
+    });
+
+    // Touch/swipe navigation for mobile
+    let startX = 0;
+    lightboxImg.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    });
+    lightboxImg.addEventListener('touchend', (e) => {
+      const endX = e.changedTouches[0].clientX;
+      if (endX - startX > 50) {
+        // Swipe right
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        showLightbox(currentIndex);
+      } else if (startX - endX > 50) {
+        // Swipe left
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        showLightbox(currentIndex);
+      }
+    });
+
+    // Close lightbox on overlay click (not image or nav buttons)
+    lightboxOverlay.addEventListener('click', (e) => {
+      if (e.target === lightboxOverlay) {
+        lightboxOverlay.classList.remove('active');
+        lightboxImg.src = '';
+      }
+    });
+  </script>
+</body>
+</html>
