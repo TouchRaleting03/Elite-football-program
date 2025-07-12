@@ -23,6 +23,7 @@
       <a href="gallery.html">Gallery</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeukhhPTnp4K_vMfRr6O9BXO5trsx8xSCFnx321yfYnGJNKLA/viewform?usp=header" target="_blank">Registration</a>
       <a href="Sponsors.html">Sponsors</a>
+      <a href="Partnerships.html">Partners</a>
       <a href="Tournaments.html" class="active">Tournaments</a>
       <a href="Team Building.html">Team Building</a>
     </nav>
@@ -51,7 +52,7 @@
     <!-- Year Calendar Section -->
     <section id="year-calendar">
       <h2>Year Calendar 2025</h2>
-      <div class="event">
+     <!-- <div class="event">
         <h3>Easter Tournament</h3>
         <p>Date: 26 - 28 April</p>
         <p>Venue: Clive Solomon Stadium</p>
@@ -64,7 +65,8 @@
         <p>Date: 01 July - 06 July</p>
         <p>Venue: KZN, Pietermaritzburg - Hilton College</p>
         <p id="bill-stewart-countdown"></p>
-      </div>
+      </div>-->
+
       <div class="event">
         <h3>Cape Town Tour</h3>
         <p>Date: 06 - 10 October</p>
@@ -112,6 +114,7 @@
     // Countdown for Bill Stewart Tournament
     function updateCountdown() {
       const countdownElem = document.getElementById('bill-stewart-countdown');
+      if (!countdownElem) return; // Prevent error if element doesn't exist
       const targetDate = new Date('2025-07-01T00:00:00');
       const now = new Date();
       const diff = targetDate - now;
@@ -133,6 +136,7 @@
     // Countdown for IberCup Tournament
     function updateIberCupCountdown() {
       const countdownElem = document.getElementById('ibercup-countdown');
+      if (!countdownElem) return; // Prevent error if element doesn't exist
       const targetDate = new Date('2025-12-11T00:00:00');
       const now = new Date();
       const diff = targetDate - now;
